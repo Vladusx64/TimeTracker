@@ -19,9 +19,10 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
+//        dd($request);
         // returns validated data as array
         $data = $request->validate(['name' => 'required|between:2,20']);
-
+//$data = $request;
         // merge with the current user ID
         $data = array_merge($data, ['user_id' => auth()->user()->id]);
 
